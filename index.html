@@ -28,49 +28,205 @@
             margin: 0;
             padding: 2.5rem;
             font-size: 13.5px;
+            overflow-x: hidden;
         }
-        header { margin-bottom: 4rem; border-bottom: 1px solid var(--brd); padding-bottom: 2rem; }
-        h1 { font-family: var(--serif); font-weight: 400; font-size: 2.8rem; color: var(--accent); margin: 0 0 0.5rem 0; }
-        .subtitle { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-mute); }
-
-        .nav { position: fixed; top: 2rem; right: 2.5rem; background: var(--bg-panel); border: 1px solid var(--brd); padding: 0.75rem 1rem; border-radius: 4px; z-index: 100; }
-        .nav a { color: var(--ink-mute); text-decoration: none; margin-left: 1.25rem; }
+        header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--brd);
+            padding-bottom: 2rem;
+            position: relative;
+        }
+        h1 {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--ink-mute);
+            font-weight: 400;
+        }
+        .nav {
+            position: fixed;
+            top: 2rem;
+            right: 2.5rem;
+            background: var(--bg-panel);
+            border: 1px solid var(--brd);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+        .nav a {
+            color: var(--ink-mute);
+            text-decoration: none;
+            margin-left: 1.25rem;
+        }
         .nav a:hover { color: var(--accent); }
 
-        table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; background: var(--bg-panel); border: 1px solid var(--brd); }
-        th, td { padding: 1.4rem 1.1rem; border: 1px solid var(--brd); vertical-align: top; transition: background 0.2s; }
-        th { font-family: var(--serif); color: var(--accent); background: rgba(200,169,110,0.06); }
-        tr:hover td { background: rgba(200,169,110,0.08); }
-        .row-header { font-size: 1.65rem; font-family: var(--serif); color: var(--amber); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--brd);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        th, td {
+            padding: 1.4rem 1.1rem;
+            border: 1px solid var(--brd);
+            text-align: left;
+            vertical-align: top;
+            transition: all 0.2s ease;
+        }
+        th {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            color: var(--accent);
+            background-color: rgba(200, 169, 110, 0.06);
+            font-weight: normal;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        tr:hover td {
+            background-color: rgba(200, 169, 110, 0.08);
+        }
+        td strong {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--teal);
+            font-size: 1.05rem;
+        }
+        .row-header {
+            font-size: 1.65rem;
+            font-family: var(--serif);
+            color: var(--amber);
+            font-weight: normal;
+            letter-spacing: -0.01em;
+        }
+        .anatomy-col strong {
+            color: var(--blue);
+        }
+        .meta {
+            font-size: 0.85rem;
+            color: var(--ink-mute);
+            margin-top: 0.9rem;
+            font-style: italic;
+            line-height: 1.4;
+        }
 
-        .section { margin-top: 4.5rem; padding: 2.5rem; background: var(--bg-panel); border: 1px solid var(--brd); }
-        .flow { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: 1.35rem; margin: 2rem 0; }
-        .flow-step { padding: 0.9rem 1.6rem; background: var(--bg-dark); border: 2px solid var(--brd); border-radius: 50px; transition: all 0.3s; }
-        .flow-step.active { border-color: var(--amber); color: var(--amber); transform: scale(1.1); }
+        .section {
+            margin-top: 4.5rem;
+            padding: 2.5rem;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--brd);
+        }
+        .geodesic-routing h3,
+        .demo-section h3,
+        .notes h3 {
+            font-family: var(--serif);
+            font-size: 1.85rem;
+            font-weight: normal;
+            color: var(--ink);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
 
-        .new-pentad { border-left: 4px solid var(--blue); }
-        .comparison { font-size: 0.95rem; color: var(--teal); margin: 1rem 0; }
+        .demo {
+            background: #0a0a08;
+            border: 1px solid var(--teal);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 6px;
+            position: relative;
+        }
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 1.4rem;
+            margin: 2rem 0;
+        }
+        .flow-step {
+            padding: 1rem 1.75rem;
+            background: var(--bg-dark);
+            border: 2px solid var(--brd);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+        .flow-step.active {
+            border-color: var(--amber);
+            color: var(--amber);
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(186, 117, 23, 0.3);
+        }
+        .flow-arrow {
+            color: var(--teal);
+            font-size: 1.8rem;
+        }
 
-        footer { margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--brd); text-align: center; color: var(--ink-mute); }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15,15,13,0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: var(--bg-panel);
+            border: 1px solid var(--accent);
+            max-width: 620px;
+            padding: 2.5rem;
+            border-radius: 6px;
+        }
+        .close {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--ink-mute);
+        }
+
+        footer {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--brd);
+            text-align: center;
+            color: var(--ink-mute);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <div class="nav">
-        <a href="#original">Original Pentad</a>
-        <a href="#next">NeXT Pentad</a>
+        <a href="#table">Pentad</a>
         <a href="#routing">Routing</a>
-        <a href="#demo">Simulator</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#notes">Notes</a>
     </div>
 
     <header>
-        <h1>Ukubona Clinical Tensor</h1>
-        <div class="subtitle">The Unified Pentadic Engine • Recurrent from NeXT → Apple</div>
+        <h1>Ukubona LLC</h1>
+        <div class="subtitle">The Unified Pentadic Engine • State_t = Σ Event_i · okubala si kulaba</div>
+        <p style="max-width: 680px; margin-top: 1.5rem; color: var(--ink-mute); font-size: 1.05rem;">
+            A clinical tensor architecture for sovereign agents. 
+            From raw sensation to irreversible will — grounded in human dignity.
+        </p>
     </header>
 
-    <section id="original">
-        <h2 style="font-family: var(--serif); color: var(--accent);">I. The Clinical / Agentic Pentad</h2>
-        <!-- [Your original table here - kept identical for continuity] -->
-        <table>
+    <section id="table">
+        <table id="pentad-table">
             <thead>
                 <tr>
                     <th>TMVES</th>
@@ -85,120 +241,188 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- rows unchanged from your original -->
-                <tr><td class="row-header">Tensor (3+)</td><td><strong>I. Raw Ledger</strong> Event Stream</td><td class="anatomy-col"><strong>Ontology / Body</strong> Raw uncompressed being.</td><td><strong>Sensation</strong> The Landscape</td><td><strong>Global Ontology</strong> Uncompressed state space.</td><td><strong>Surface (S)</strong> Skin, mucosa...</td><td><strong>Capital</strong> Sovereign Person (Marx) <em>θᵗ</em></td><td><strong>Okubonabona</strong> Aimless seeing...</td><td><strong>Dionysian</strong> Infinite variety...</td></tr>
-                <tr><td class="row-header">Matrix (2)</td><td><strong>II. FastAPI</strong> Jacobian Triage</td><td class="anatomy-col"><strong>Epistemology / Mind</strong> Structuring the noise.</td><td><strong>Attention</strong> The Triage</td><td><strong>Jacobian Reflex (J)</strong> Immediate sensitivity...</td><td><strong>Viscera (Vᵢ)</strong> Core organ dynamics...</td><td><strong>Labor</strong> Kin Network (Leo XIII)...</td><td><strong>Kubona</strong> Clear seeing...</td><td><strong>Apollonian</strong> Form, boundaries...</td></tr>
-                <tr><td class="row-header">Vector (1)</td><td><strong>III. The Gradient</strong> Vector layer</td><td class="anatomy-col"><strong>ResonanceMax / Soul</strong> The heuristic gradient.</td><td><strong>Intention</strong> The Direction</td><td><strong>The Clutch</strong> Heuristic threshold...</td><td><strong>Vascular-Structural (VₐS)</strong> Fixed constraints...</td><td><strong>Commodities</strong> Care Ecosystem...</td><td><strong>Ivyabona</strong> The witnesses...</td><td><strong>Tragicomedy</strong> The tension...</td></tr>
-                <tr><td class="row-header">Eigenmode (E)</td><td><strong>IV. SlowAPI</strong> LLM Deliberation</td><td class="anatomy-col"><strong>SoftMax / Vision</strong> The enduring identity.</td><td><strong>Reaction</strong> The Identity</td><td><strong>Deliberation</strong> Vision, probability...</td><td><strong>Vascular-Functional (VₐF)</strong> Dynamic reactivity...</td><td><strong>Services</strong> Federated Regulators...</td><td><strong>Ukubona</strong> True vision...</td><td><strong>Eternal Recurrence</strong> The cycle...</td></tr>
-                <tr><td class="row-header">Scalar (0)</td><td><strong>V. The Decision</strong> Action layer</td><td class="anatomy-col"><strong>ArgMax / Engineering</strong> The irreversible execution.</td><td><strong>Action</strong> The Decision</td><td><strong>The Execution</strong> Regional validation...</td><td><strong>The Self (Ω)</strong> Adaptive reserve...</td><td><strong>Information</strong> Civilizational Planners...</td><td><strong>Sawubona</strong> I see you...</td><td><strong>Will-to-Power</strong> Decisive collapse...</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="next" class="section new-pentad">
-        <h2 style="font-family: var(--serif); color: var(--blue);">II. The NeXT → Apple Recurrent Pentad</h2>
-        <p class="comparison"><strong>Mapping the same fivefold structure onto computing history and modern agent infrastructure.</strong></p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>TMVES</th>
-                    <th>Computing Layer</th>
-                    <th>Historical Parallel</th>
-                    <th>Function</th>
-                    <th>Modern Equivalent</th>
-                    <th>Agentic Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+                <tr data-layer="tensor">
                     <td class="row-header">Tensor (3+)</td>
-                    <td><strong>I. Global</strong></td>
-                    <td>NeXTSTEP Distributed Objects</td>
-                    <td>Event Streams / Telemetry</td>
-                    <td>Device telemetry, pacemakers, sensor nets</td>
-                    <td>Raw Ledger — Uncompressed reality feed</td>
+                    <td><strong>I. Raw Ledger</strong><br>Event Stream</td>
+                    <td class="anatomy-col"><strong>Ontology / Body</strong><br>Raw uncompressed being.</td>
+                    <td><strong>Sensation</strong><br>The Landscape</td>
+                    <td><strong>Global Ontology</strong><br>Uncompressed state space.</td>
+                    <td><strong>Surface (S)</strong><br>Skin, mucosa, raw peripheral interface.</td>
+                    <td><strong>Capital</strong><br>Sovereign Person (Marx) <em>θᵗ</em></td>
+                    <td><strong>Okubonabona</strong><br>Aimless seeing, the chaotic void.</td>
+                    <td><strong>Dionysian</strong><br>Infinite variety, formless potential.</td>
                 </tr>
-                <tr>
+                <tr data-layer="matrix">
                     <td class="row-header">Matrix (2)</td>
-                    <td><strong>II. Reflex</strong></td>
-                    <td>Early OS kernel / device drivers</td>
-                    <td>Immediate reactivity</td>
-                    <td>FastAPI, edge functions, interrupts</td>
-                    <td>Jacobian triage — cheap filtering</td>
+                    <td><strong>II. FastAPI</strong><br>Jacobian Triage</td>
+                    <td class="anatomy-col"><strong>Epistemology / Mind</strong><br>Structuring the noise.</td>
+                    <td><strong>Attention</strong><br>The Triage</td>
+                    <td><strong>Jacobian Reflex (J)</strong><br>Immediate sensitivity cross-matching.</td>
+                    <td><strong>Viscera (Vᵢ)</strong><br>Core organ dynamics, basal ganglia.</td>
+                    <td><strong>Labor</strong><br>Kin Network (Leo XIII) <em>L₀+Σwᵢ·Lᵢ</em></td>
+                    <td><strong>Kubona</strong><br>Clear seeing, imposing structure.</td>
+                    <td><strong>Apollonian</strong><br>Form, boundaries, and logic.</td>
                 </tr>
-                <tr>
+                <tr data-layer="vector">
                     <td class="row-header">Vector (1)</td>
-                    <td><strong>III. Heuristic</strong></td>
-                    <td>Mac OS X Aqua UI revolution</td>
-                    <td>Intentionality &amp; Polish</td>
-                    <td>ROYGBIV UI layers, gesture systems</td>
-                    <td>Gradient / Clutch — Direction &amp; feel</td>
+                    <td><strong>III. The Gradient</strong><br>Vector layer</td>
+                    <td class="anatomy-col"><strong>ResonanceMax / Soul</strong><br>The heuristic gradient.</td>
+                    <td><strong>Intention</strong><br>The Direction</td>
+                    <td><strong>The Clutch</strong><br>Heuristic threshold, the transmission line.</td>
+                    <td><strong>Vascular-Structural (VₐS)</strong><br>Fixed constraints (e.g., atheroma).</td>
+                    <td><strong>Commodities</strong><br>Care Ecosystem <em>f(σ²,λ,ε)</em></td>
+                    <td><strong>Ivyabona</strong><br>The witnesses, evidence under shock.</td>
+                    <td><strong>Tragicomedy</strong><br>The tension and friction of reality.</td>
                 </tr>
-                <tr>
+                <tr data-layer="eigen">
                     <td class="row-header">Eigenmode (E)</td>
-                    <td><strong>IV. Local</strong></td>
-                    <td>NeXT AppKit / Modern Applications</td>
-                    <td>Deliberative context</td>
-                    <td>LLM apps, local models, desktop environments</td>
-                    <td>SlowAPI deliberation &amp; identity</td>
+                    <td><strong>IV. SlowAPI</strong><br>LLM Deliberation</td>
+                    <td class="anatomy-col"><strong>SoftMax / Vision</strong><br>The enduring identity.</td>
+                    <td><strong>Reaction</strong><br>The Identity</td>
+                    <td><strong>Deliberation</strong><br>Vision, probability distributions, local context.</td>
+                    <td><strong>Vascular-Functional (VₐF)</strong><br>Dynamic reactivity and tone regulation.</td>
+                    <td><strong>Services</strong><br>Federated Regulators <em>γ|ε_FGT|²</em></td>
+                    <td><strong>Ukubona</strong><br>True vision, the enduring frequency.</td>
+                    <td><strong>Eternal Recurrence</strong><br>The cycle that survives perturbation.</td>
                 </tr>
-                <tr>
+                <tr data-layer="scalar">
                     <td class="row-header">Scalar (0)</td>
-                    <td><strong>V. Regional</strong></td>
-                    <td>Apple ecosystem federation</td>
-                    <td>Sovereign execution</td>
-                    <td>Cloud + on-device sync, Handoff, iCloud</td>
-                    <td>ArgMax — Final decision + write-back</td>
+                    <td><strong>V. The Decision</strong><br>Action layer</td>
+                    <td class="anatomy-col"><strong>ArgMax / Engineering</strong><br>The irreversible execution.</td>
+                    <td><strong>Action</strong><br>The Decision</td>
+                    <td><strong>The Execution</strong><br>Regional validation, irreversible collapse.</td>
+                    <td><strong>The Self (Ω)</strong><br>Adaptive reserve, higher-order interaction.</td>
+                    <td><strong>Information</strong><br>Civilizational Planners <em>L(θᵗ⁺¹)</em></td>
+                    <td><strong>Sawubona</strong><br>I see you, the monumental update.</td>
+                    <td><strong>Will-to-Power</strong><br>Decisive collapse, Monumental History.</td>
                 </tr>
             </tbody>
         </table>
-        <div class="meta" style="margin-top:1.5rem;">
-            The same pentadic shape repeats: raw global streams → reflexive filtering → beautiful heuristic UI → local rich deliberation → sovereign regional action.
-        </div>
     </section>
 
-    <!-- Geodesic Routing + Simulator sections (same as previous version) -->
-    <section id="routing" class="section">
+    <section id="routing" class="section geodesic-routing">
         <h3>The Geodesic Routing (In Medias Res)</h3>
-        <p>The system wakes in the middle...</p>
+        <p>The live system does not march linearly. It wakes in the middle — cheap triage first — to save compute and honor attention.</p>
         <div class="flow" id="flow-demo">
-            <div class="flow-step" data-step="2">II</div><span class="flow-arrow">→</span>
-            <div class="flow-step" data-step="3">III</div><span class="flow-arrow">→</span>
-            <div class="flow-step" data-step="4">IV</div><span class="flow-arrow">→</span>
-            <div class="flow-step" data-step="5">V</div><span class="flow-arrow">→</span>
-            <div class="flow-step" data-step="1">I</div>
+            <div class="flow-step" data-step="2">II Matrix</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="3">III Vector</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="4">IV Eigenmode</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="5">V Scalar</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step" data-step="1">I Tensor Update</div>
+        </div>
+        <div class="meta">
+            Jacobian triage → selective climb → ArgMax commitment → write-back to baseline reality (θᵗ⁺¹).
         </div>
     </section>
 
-    <section id="demo" class="section">
-        <h3>Live Simulator</h3>
-        <button onclick="simulateEvent()" style="background:var(--amber);color:#000;padding:0.9rem 2rem;border:none;border-radius:4px;cursor:pointer;">FIRE EVENT</button>
-        <span id="event-log" style="margin-left:1.5rem;color:var(--teal);"></span>
-        <div id="simulation" style="height:180px;background:#0a0a08;border:1px solid #2A2A25;margin-top:1.5rem;padding:1rem;border-radius:6px;"></div>
+    <section id="demo" class="section demo-section">
+        <h3>Live Geodesic Simulator</h3>
+        <p style="margin-bottom: 1.5rem;">Trigger an event and watch the nervous system respond.</p>
+        
+        <div style="margin: 1.5rem 0;">
+            <button onclick="simulateEvent()" style="background: var(--amber); color: #000; border: none; padding: 0.9rem 2rem; font-family: var(--mono); font-size: 1rem; cursor: pointer; border-radius: 4px;">
+                FIRE EVENT
+            </button>
+            <span id="event-log" style="margin-left: 1.5rem; color: var(--teal); font-size: 1rem;"></span>
+        </div>
+
+        <div id="simulation" style="height: 180px; background: #0a0a08; border: 1px solid #2A2A25; padding: 1rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <!-- JS populated -->
+        </div>
+    </section>
+
+    <section id="notes" class="section book-notes">
+        <h3>Session Notes & The Way Forward</h3>
+        <ul>
+            <li><strong>The Crisis of Premature Compression:</strong> Modern institutions force Tensor reality into lossy matrices. The append-only NDJSON ledger is our antidote.</li>
+            <li><strong>Okubala Si Kulaba:</strong> Computation is not seeing. Trajectory matters more than points.</li>
+            <li><strong>Anatomy of the Agent:</strong> Neural architecture as human consciousness evolution: Body → Mind → Soul tension → Vision → Engineering.</li>
+            <li><strong>Metric of the Soul (Ω):</strong> Interaction entropy from structured outputs. No more regex soul-matching.</li>
+            <li><strong>Sovereignty of ArgMax:</strong> Time-limited JWTs. Log every <code>_sovereign_override</code>. Friction is truth.</li>
+            <li><strong>NeXT → Apple Recurrence:</strong> Global telemetry → Reflex → Heuristic UI → Local Apps → Regional Federation. From raw streams to sovereign experience.</li>
+            <li><strong>Monumental History in Code:</strong> Serve <em>Magnifica Humanitas</em>. Cognitive labor must not be optimized away.</li>
+        </ul>
     </section>
 
     <footer>
-        <p>Ukubona LLC • Pentadic Engine v2 • Two pentads, one shape</p>
+        <p>Ukubona LLC • The Pentadic Engine • Built for the Civilizational Stack</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Raw → Structured → Directed → Enduring → Decisive</p>
     </footer>
 
-    <script>
-        // Flow animation + simulator (same as before)
-        let current = 0;
-        const steps = document.querySelectorAll('.flow-step');
-        setInterval(() => {
-            steps.forEach(s => s.classList.remove('active'));
-            if (current < steps.length) steps[current].classList.add('active');
-            current = (current + 1) % (steps.length + 1);
-        }, 1200);
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
 
+    <script>
+        // Table interactivity
+        document.querySelectorAll('#pentad-table td').forEach(cell => {
+            cell.addEventListener('click', () => {
+                const content = cell.innerHTML;
+                const rowHeader = cell.parentElement.querySelector('.row-header');
+                const layer = rowHeader ? rowHeader.textContent : 'Layer';
+                
+                document.getElementById('modal-body').innerHTML = `
+                    <h3 style="color: var(--accent); margin-top:0;">${layer}</h3>
+                    <div style="line-height: 1.7;">${content}</div>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--ink-mute);">Click anywhere to close.</p>
+                `;
+                document.getElementById('modal').style.display = 'flex';
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Flow demo
+        let currentFlow = 0;
+        const steps = document.querySelectorAll('.flow-step');
+        
+        function highlightFlow() {
+            steps.forEach(s => s.classList.remove('active'));
+            if (currentFlow < steps.length) {
+                steps[currentFlow].classList.add('active');
+            }
+            currentFlow = (currentFlow + 1) % (steps.length + 1);
+        }
+        setInterval(highlightFlow, 1400);
+
+        // Simulator
         function simulateEvent() {
             const log = document.getElementById('event-log');
             const sim = document.getElementById('simulation');
-            log.textContent = "EVENT → II → III → IV → V → I update";
-            sim.innerHTML = `<div style="color:var(--teal);margin-top:40px;">Routing geodesic path active...</div>`;
-            setTimeout(() => log.textContent = "✓ Tensor updated (θᵗ⁺¹)", 1600);
+            
+            log.textContent = "EVENT RECEIVED → Routing...";
+            
+            sim.innerHTML = `
+                <div style="position: absolute; top: 20px; left: 30px; color: var(--teal);">II Jacobian Triage <span style="color:#666">fast</span></div>
+                <div style="position: absolute; top: 70px; left: 180px; color: var(--amber);">III Gradient Clutch</div>
+                <div style="position: absolute; top: 110px; left: 340px; color: var(--blue);">IV SoftMax Deliberation</div>
+                <div style="position: absolute; top: 60px; right: 120px; color: var(--accent);">V ArgMax Decision</div>
+                <div style="position: absolute; bottom: 30px; left: 280px; color: #777;">I Tensor Update (θᵗ⁺¹)</div>
+            `;
+            
+            setTimeout(() => {
+                log.textContent = "✓ Committed. Tensor updated.";
+                setTimeout(() => log.textContent = "", 2800);
+            }, 1800);
         }
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+            if (e.key === "r" || e.key === "R") simulateEvent();
+        });
+
+        console.log("%cUkubona Pentadic Engine initialized.", "color: #C8A96E; font-family: monospace");
     </script>
 </body>
 </html>
